@@ -1,0 +1,20 @@
+{
+  "name": "samen-rebar-app",
+  "version": "2.0.0",
+  "description": "سامانه ثبت گزارش خط تولید میلگرد - فولاد ثامن پایتخت",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve . -p 8080",
+    "cap:sync": "npx cap sync",
+    "cap:open": "npx cap open android",
+    "android": "npx cap sync && npx cap open android"
+  },
+  "keywords": ["rebar", "steel", "checklist", "factory", "android"],
+  "author": "فولاد ثامن پایتخت",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@capacitor/android": "^6.2.0",
+    "@capacitor/core": "^6.2.0",
+    "@capacitor/cli": "^6.2.0"
+  }
+}

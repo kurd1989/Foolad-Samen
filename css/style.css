@@ -1,0 +1,157 @@
+/* Custom Styles for Steel Factory App */
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overscroll-behavior: none;
+}
+
+body {
+  font-family: 'Vazirmatn', 'Tahoma', system-ui, -apple-system, sans-serif;
+}
+
+/* Safe area for notched phones */
+@supports (padding: max(0px)) {
+  #bottom-nav {
+    padding-bottom: max(0px, env(safe-area-inset-bottom));
+  }
+  #header {
+    padding-top: max(12px, env(safe-area-inset-top));
+  }
+}
+
+/* Navigation active state */
+.nav-btn.active {
+  color: #0284c7;
+}
+.nav-btn.active i {
+  stroke-width: 2.5;
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: all 0.2s ease;
+}
+.card-hover:active {
+  transform: scale(0.98);
+}
+
+/* Form inputs */
+.form-input {
+  @apply w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-800 
+         focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent
+         transition text-sm;
+}
+
+.form-label {
+  @apply block text-sm font-medium text-slate-700 mb-1.5;
+}
+
+.form-select {
+  @apply w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-800 
+         focus:outline-none focus:ring-2 focus:ring-primary-500 appearance-none text-sm;
+}
+
+/* Checkbox custom */
+.check-item {
+  @apply flex items-center gap-3 p-3 rounded-xl border border-slate-200 bg-white 
+         active:bg-slate-50 transition cursor-pointer;
+}
+.check-item.checked {
+  @apply border-emerald-500 bg-emerald-50;
+}
+.check-item.checked .check-box {
+  @apply bg-emerald-500 border-emerald-500;
+}
+
+.check-box {
+  @apply w-6 h-6 rounded-lg border-2 border-slate-300 flex items-center justify-center 
+         transition flex-shrink-0;
+}
+
+/* Stand grid */
+.stand-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.stand-btn {
+  @apply py-2.5 text-xs font-medium rounded-lg border border-slate-200 bg-white 
+         text-slate-600 active:scale-95 transition;
+}
+.stand-btn.active {
+  @apply bg-primary-600 text-white border-primary-600;
+}
+
+/* Toast */
+.toast {
+  @apply px-4 py-3 rounded-xl shadow-lg text-sm font-medium flex items-center gap-2 
+         pointer-events-auto animate-slide-in;
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
+}
+
+/* Drawer */
+#drawer.open {
+  transform: translateX(0);
+}
+#drawer-overlay.open {
+  opacity: 1;
+}
+
+/* Scrollbar hide */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Status badges */
+.badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+.badge-success {
+  @apply bg-emerald-100 text-emerald-800;
+}
+.badge-warning {
+  @apply bg-amber-100 text-amber-800;
+}
+.badge-danger {
+  @apply bg-rose-100 text-rose-800;
+}
+.badge-info {
+  @apply bg-sky-100 text-sky-800;
+}
+
+/* Empty state */
+.empty-state {
+  @apply flex flex-col items-center justify-center py-16 text-center px-6;
+}
+
+/* Floating action button */
+.fab {
+  @apply fixed bottom-24 left-1/2 -translate-x-1/2 max-w-lg w-full px-4 
+         flex justify-end pointer-events-none z-40;
+}
+.fab button {
+  @apply pointer-events-auto shadow-xl;
+}
